@@ -1,0 +1,27 @@
+.header-container {
+    width: 100vw;
+    background-color: gray;
+    padding: 10px;
+}
+
+.navigation-choices {
+    display: flex;
+}
+
+.choice {
+    margin-right: 10px;
+    list-style-type: none;
+}
+
+.choice,.icon {
+    vertical-align: middle;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}
+
+a:hover {
+    color: white;
+}
