@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-root',
@@ -7,4 +8,20 @@ import { Component } from '@angular/core';
 })
 export class AppComponent {
   title = 'code-challenge';
+
+  displayHeader = false;
+
+  constructor(private router: Router) { }
+
+  ngOnInit() {
+    this.router.events.subscribe((event) => {
+      //checks to see if navigation is completed and is on login page
+      if(this.router.url == "/login") {
+        this.displayHeader = false;
+      }else {
+        this.displayHeader = true;
+      }
+    })
+  }
+  
 }
