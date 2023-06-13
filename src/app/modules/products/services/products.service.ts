@@ -24,4 +24,8 @@ export class ProductsService {
     return this.http.get<Product[]>("http://localhost:3000/products");
   }
 
+  updateProduct(updatedProduct: Product): Observable<Product> {
+    return this.http.put<Product>(`http://localhost:3000/products/${updatedProduct.id}`,updatedProduct);
+  }
+
 }

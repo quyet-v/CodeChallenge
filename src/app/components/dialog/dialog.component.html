@@ -1,12 +1,12 @@
-<div class="dialog-container">
+<div class="dialog-container" *ngIf="openState && product != undefined">
     <div class="backdrop"></div>
     <dialog open>
-        <form class="update-product-form">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <input type="text">
-            <button>Save</button>
+        <form class="update-product-form" (submit)="handleSave($event)">
+            <input #sku type="text" value="{{product.sku}}">
+            <input #name type="text" value="{{product.name}}">
+            <input #description type="text" value="{{product.description}}">
+            <input #price type="text" value="{{product.price}}">
+            <button type="submit">Save</button>
         </form>
     </dialog>
 </div>
