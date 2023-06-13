@@ -11,10 +11,9 @@
 
 .cart-title {
     border-bottom: 5px solid black;
-    flex: 0.1;
+    flex: 0.05;
 }
 
 .total-title {
-    flex: 0.1;
-
+    flex: 0.05;
 }
