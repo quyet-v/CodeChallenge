@@ -1,4 +1,16 @@
 .checkout-container {
-    background-color: blue;
     height: 100%;
+    padding: 20px;
+}
+
+.checkout-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.input {
+    width: 100%;
+    height: 40px;
+    margin-top: 20px;
+    padding: 10px;
 }
