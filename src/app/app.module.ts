@@ -8,6 +8,7 @@ import { AuthModule } from './modules/auth/auth.module';
 import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductsModule } from './modules/products/products.module';
+import { CartModule } from './modules/cart/cart.module';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { ProductsModule } from './modules/products/products.module';
     AppRoutingModule,
     AuthModule,
     ProductsModule,
+    CartModule,
     MatIconModule
   ],
   providers: [],
