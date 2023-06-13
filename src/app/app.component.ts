@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { Router } from '@angular/router';
-import { RouteService } from './services/route.service';
 
 @Component({
   selector: 'app-root',
@@ -12,13 +11,12 @@ export class AppComponent {
 
   displayHeader = false;
 
-  constructor(private routerService: RouteService) { }
+  constructor(private router: Router) { }
 
   ngOnInit() {
-    this.routerService.Router.events.subscribe(() => {
+    this.router.events.subscribe((event) => {
       //checks to see if navigation is completed and is on login page
-      
-      if(this.routerService.Router.url == "/login") {
+      if(this.router.url == "/login") {
         this.displayHeader = false;
       }else {
         this.displayHeader = true;
