@@ -90,14 +90,31 @@ export class AuthService {
    * @param token - token to decode 
    * @returns JSON string representing the User object
    */
-  decodeToken(token: string): User {
-    const jsonString = CryptoJS.AES.decrypt(token,this.secret).toString(CryptoJS.enc.Utf8)
-    const user: User = JSON.parse(jsonString);
-    return user;
+  decodeToken(): User | undefined {
+    const token = localStorage.getItem("token");
+    if(token) {
+      const jsonString = CryptoJS.AES.decrypt(token,this.secret).toString(CryptoJS.enc.Utf8)
+      const user: User = JSON.parse(jsonString);
+      return user;
+    }
+
+    return undefined;
   }
 
-  getRole(token: string): string {
-    const user: User = this.decodeToken(token);
-    return user.role;
+  getRole(): string {
+    const user: User | undefined = this.decodeToken();
+    if(user) {
+      return user.role;
+    }
+    return "";
+  }
+
+  isAdmin(): boolean {
+    const token = localStorage.getItem("token");
+    if(token) {
+      return this.getRole() == "admin";
+    }
+
+    return false;
   }
 }

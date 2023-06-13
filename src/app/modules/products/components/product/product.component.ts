@@ -11,8 +11,11 @@ import { CartService } from 'src/app/modules/cart/services/cart.service';
 export class ProductComponent {
 
   @Input() product?: Product;
+  authService: AuthService;
 
-  constructor(private cartService: CartService, private authService: AuthService) { }
+  constructor(private cartService: CartService, authService: AuthService) {
+    this.authService = authService;
+  }
 
   handleAdd() {
     if(this.product != undefined) {
@@ -26,15 +29,6 @@ export class ProductComponent {
       contains = this.cartService.findIndex(this.product) > -1;
     }
     return contains;
-  }
-
-  isAdmin(): boolean {
-    const token = localStorage.getItem("token");
-    let isAdmin = false;
-    if(token) {
-      isAdmin = this.authService.getRole(token) == "admin";
-    }
-    return isAdmin
   }
 
 }
