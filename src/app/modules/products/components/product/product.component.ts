@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import { CartService } from 'src/app/modules/cart/services/cart.service';
 
 @Component({
@@ -10,9 +11,10 @@ import { CartService } from 'src/app/modules/cart/services/cart.service';
 export class ProductComponent {
 
   @Input() product?: Product;
+  authService: AuthService;
 
-  constructor(private cartService: CartService) {
-
+  constructor(private cartService: CartService, authService: AuthService) {
+    this.authService = authService;
   }
 
   handleAdd() {
