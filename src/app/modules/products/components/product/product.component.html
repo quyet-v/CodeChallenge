@@ -14,6 +14,6 @@
         disabled 
         (click)="handleAdd()"><mat-icon>check_circle</mat-icon></button>
 
-    <button class="button" *ngIf="authService.isAdmin()">Edit</button>
+    <button class="button" *ngIf="authService.isAdmin()" (click)="handleEdit()">Edit</button>
 
 </div>

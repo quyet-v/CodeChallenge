@@ -1,0 +1,18 @@
+.order-container {
+    background-color: #ffc145;
+    display: flex;
+    width: 50vw;
+    margin-bottom: 5px;
+
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+.info-section {
+    padding: 8px;
+}
+
+.products-section {
+    padding-left: 50px;
+}

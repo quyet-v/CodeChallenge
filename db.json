@@ -5,14 +5,14 @@
       "sku": "MT-BL-L-VN",
       "name": "Men's Blue V-Neck Shirt",
       "description": "A comfortable and stylish blue V-neck t-shirt for men.",
-      "price": "28.99"
+      "price": "19.99"
     },
     {
       "id": 2,
       "sku": "JEANS-BK-32",
-      "name": "Black Denim Jeans",
-      "description": "Classic black denim jeans for a stylish and casual look.",
-      "price": 49.99
+      "name": "Blue Denim Jeans",
+      "description": "Classic blue denim jeans for a stylish and casual look.",
+      "price": "49.99"
     },
     {
       "id": 3,

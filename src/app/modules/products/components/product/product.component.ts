@@ -2,6 +2,7 @@ import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/models/Product';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 import { CartService } from 'src/app/modules/cart/services/cart.service';
+import { DialogService } from 'src/app/services/dialog.service';
 
 @Component({
   selector: 'app-product',
@@ -13,7 +14,7 @@ export class ProductComponent {
   @Input() product?: Product;
   authService: AuthService;
 
-  constructor(private cartService: CartService, authService: AuthService) {
+  constructor(private cartService: CartService, authService: AuthService, private dialogService: DialogService) {
     this.authService = authService;
   }
 
@@ -29,6 +30,13 @@ export class ProductComponent {
       contains = this.cartService.findIndex(this.product) > -1;
     }
     return contains;
+  }
+
+  handleEdit() {
+    this.dialogService.setOpenChange(true);
+    if(this.product) {
+      this.dialogService.setProductChange(this.product);
+    }
   }
 
 }
