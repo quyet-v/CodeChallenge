@@ -1,27 +1,26 @@
 <div class="order-container" *ngIf="order">
     <div class="customer-details-container">
-        <h2>Customer Details</h2>
+        <h1>Customer Details</h1>
         <div class="info-section">
-            <h3><u>Name</u></h3>
+            <h2><u>Name</u></h2>
             <p>{{order.customer.firstname + " " + order.customer.lastname}}</p>
         </div>
 
         <div class="info-section">
-            <h3><u>Email</u></h3>
+            <h2><u>Email</u></h2>
             <p>{{order.customer.email}}</p>
         </div>
 
         <div class="info-section">
-            <h3><u>Date Ordered</u></h3>
+            <h2><u>Date Ordered</u></h2>
             <p>{{order.dateOrdered}}</p>
         </div>
     </div>
 
     <div class="products-container ">
-        <h2>Products</h2>
+        <h1>Products</h1>
         <ul>
             <li class="product" *ngFor="let product of order.products">{{product.name}} <b>x {{product.quantity}}</b></li>
         </ul>
     </div>
-
 </div>
