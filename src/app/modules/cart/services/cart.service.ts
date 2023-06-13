@@ -91,7 +91,6 @@ export class CartService {
    */
   calculateTotal(): number {
     let total = 0;
-
     //FOREACH product in cart
     this.cart.forEach(product => {
       //IF product has quantity since it's an optional field
@@ -99,7 +98,10 @@ export class CartService {
         total += product.price * product.quantity;
       }
     })
-
     return total;
+  }
+
+  setCart(cart: Product[]) {
+    this.cart = cart;
   }
 }

@@ -43,10 +43,10 @@ export class AuthService {
    * @returns true if login succeeded, false if not
    */
   login(attempt: LoginAttempt): boolean {
-    const loginAttemptStatus = this.checkCredentials(attempt,this.users);
+    const user = this.checkCredentials(attempt,this.users);
 
-    if(loginAttemptStatus.username != "") {
-      localStorage.setItem("token",this.generateToken(loginAttemptStatus));
+    if(user != undefined) {
+      localStorage.setItem("token",this.generateToken(user));
       return true;
     }
 
@@ -63,13 +63,13 @@ export class AuthService {
    * @param users - array of valid User objects to compare login attempt to 
    * @returns the valid user if success and empty User object if inocrrect
    */
-  checkCredentials(attempt: LoginAttempt, users: User[]): User {
+  checkCredentials(attempt: LoginAttempt, users: User[]): User | undefined {
     const userExists = users.findIndex(user => user.username == attempt.username && user.password == attempt.password);
     if(userExists > -1) {
       return users[userExists];
     }
 
-    return {username: "",password: "", role:""};
+    return undefined;
   }
 
   /**
@@ -80,6 +80,9 @@ export class AuthService {
    * @returns token
    */
   generateToken(user: User): string {
+    if(user == undefined) {
+      return "";
+    }
     return CryptoJS.AES.encrypt(JSON.stringify(user),this.secret).toString();
   }
 
@@ -90,8 +93,7 @@ export class AuthService {
    * @param token - token to decode 
    * @returns JSON string representing the User object
    */
-  decodeToken(): User | undefined {
-    const token = localStorage.getItem("token");
+  decodeToken(token: string): User | undefined {
     if(token) {
       const jsonString = CryptoJS.AES.decrypt(token,this.secret).toString(CryptoJS.enc.Utf8)
       const user: User = JSON.parse(jsonString);
@@ -101,12 +103,17 @@ export class AuthService {
     return undefined;
   }
 
-  getRole(): string {
-    const user: User | undefined = this.decodeToken();
-    if(user) {
-      return user.role;
+  getRole(): string | null {
+    const token = localStorage.getItem("token");
+
+    if(token) {
+      const user: User | undefined = this.decodeToken(token);
+      if(user) {
+        return user.role;
+      }
     }
-    return "";
+    
+    return null;
   }
 
   isAdmin(): boolean {
