@@ -13,7 +13,7 @@ export class AuthService {
   secret: string =  "secret";
   users: User[] = [];
   subscription: Subscription;
-  
+
   constructor(private http: HttpClient) {
     this.subscription = this.getUsers().subscribe(response => {
       this.users = response;
@@ -94,5 +94,10 @@ export class AuthService {
     const jsonString = CryptoJS.AES.decrypt(token,this.secret).toString(CryptoJS.enc.Utf8)
     const user: User = JSON.parse(jsonString);
     return user;
+  }
+
+  getRole(token: string): string {
+    const user: User = this.decodeToken(token);
+    return user.role;
   }
 }
