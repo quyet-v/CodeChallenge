@@ -13,4 +13,8 @@ export class ProductComponent {
   constructor() {
 
   }
+
+  handleAdd() {
+    
+  }
 }
