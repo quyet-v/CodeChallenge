@@ -1,0 +1,26 @@
+input {
+    display: block;
+    margin: 20px auto;
+    width: 50%;
+
+}
+
+dialog {
+    width: 50vw;
+    display: block;
+    margin: 0 auto;
+}
+
+button {
+    display: block; 
+    margin: 0 auto;
+}
+
+.backdrop {
+    width: 100vw;
+    height: 100vh;
+    position: absolute;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+}

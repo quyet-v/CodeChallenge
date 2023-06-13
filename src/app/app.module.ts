@@ -10,12 +10,14 @@ import { HeaderComponent } from './components/header/header.component';
 import { ProductsModule } from './modules/products/products.module';
 import { CartModule } from './modules/cart/cart.module';
 import { OrdersModule } from './modules/orders/orders.module';
+import { DialogComponent } from './components/dialog/dialog.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     HomeComponent,
     HeaderComponent,
+    DialogComponent,
   ],
   imports: [
     BrowserModule,
