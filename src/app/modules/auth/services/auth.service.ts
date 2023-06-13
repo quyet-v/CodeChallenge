@@ -13,6 +13,7 @@ export class AuthService {
   secret: string =  "secret";
   users: User[] = [];
   subscription: Subscription;
+  
   constructor(private http: HttpClient) {
     this.subscription = this.getUsers().subscribe(response => {
       this.users = response;
@@ -32,6 +33,15 @@ export class AuthService {
     return this.http.get<User[]>("http://localhost:3000/users");
   }
 
+  /**
+   * 
+   * login method
+   * uses checkCredentials method to see if credentials are correct
+   * generates token if login succeeded.
+   * 
+   * @param attempt - login attempt from user represented as LoginAttempt object
+   * @returns true if login succeeded, false if not
+   */
   login(attempt: LoginAttempt): boolean {
     const loginAttemptStatus = this.checkCredentials(attempt,this.users);
 
@@ -42,7 +52,6 @@ export class AuthService {
 
     this.subscription.unsubscribe();
     return false;
-
   }
 
   /**
@@ -86,5 +95,4 @@ export class AuthService {
     const user: User = JSON.parse(jsonString);
     return user;
   }
-
 }

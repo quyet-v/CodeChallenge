@@ -1,9 +1,9 @@
 <div class="checkout-container">
     <h1 class="enter-details-title">Enter details</h1>
-    <form class="checkout-form">
-        <input type="text" class="input" placeholder="Firstname...">
-        <input type="text" class="input" placeholder="Lastname...">
-        <input type="text" class="input" placeholder="Email...">
+    <form class="checkout-form" (submit)="handleOrder($event)">
+        <input #firstname required type="text" class="input" placeholder="Firstname...">
+        <input #lastname required type="text" class="input" placeholder="Lastname...">
+        <input #email required type="text" class="input" placeholder="Email...">
         <button type="submit" class="input">Place order</button>
     </form>
 </div>

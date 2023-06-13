@@ -1,37 +1,112 @@
 {
-    "products": [
+  "products": [
+    {
+      "id": 1,
+      "sku": "MT-BL-L-VN",
+      "name": "Men's Blue V-Neck Shirt",
+      "description": "A comfortable and stylish blue V-neck t-shirt for men.",
+      "price": "28.99"
+    },
+    {
+      "id": 2,
+      "sku": "JEANS-BK-32",
+      "name": "Black Denim Jeans",
+      "description": "Classic black denim jeans for a stylish and casual look.",
+      "price": 49.99
+    },
+    {
+      "id": 3,
+      "sku": "HAT-RD-OS",
+      "name": "Red Baseball Cap",
+      "description": "A vibrant red baseball cap to add a pop of color to your outfit.",
+      "price": 24.99
+    }
+  ],
+  "users": [
+    {
+      "username": "customer",
+      "password": "customer",
+      "role": "customer"
+    },
+    {
+      "username": "admin",
+      "password": "admin",
+      "role": "admin"
+    }
+  ],
+  "orders": [
+    {
+      "customer": {
+        "firstname": "John",
+        "lastname": "Cena",
+        "email": "john.cena@gmail.com"
+      },
+      "products": [
         {
           "id": 1,
           "sku": "MT-BL-L-VN",
           "name": "Men's Blue V-Neck Shirt",
           "description": "A comfortable and stylish blue V-neck t-shirt for men.",
-          "price": "28.99"
+          "price": "28.99",
+          "quantity": 1
+        }
+      ],
+      "dateOrdered": "2023-06-13T07:24:57.700Z",
+      "id": 1
+    },
+    {
+      "customer": {
+        "firstname": "Ash",
+        "lastname": "Ketchup",
+        "email": "ash.ketchup123@gmail.com"
+      },
+      "products": [
+        {
+          "id": 1,
+          "sku": "MT-BL-L-VN",
+          "name": "Men's Blue V-Neck Shirt",
+          "description": "A comfortable and stylish blue V-neck t-shirt for men.",
+          "price": "28.99",
+          "quantity": 5
         },
         {
           "id": 2,
           "sku": "JEANS-BK-32",
           "name": "Black Denim Jeans",
           "description": "Classic black denim jeans for a stylish and casual look.",
-          "price": 49.99
+          "price": 49.99,
+          "quantity": 1
         },
         {
           "id": 3,
           "sku": "HAT-RD-OS",
           "name": "Red Baseball Cap",
           "description": "A vibrant red baseball cap to add a pop of color to your outfit.",
-          "price": 24.99
+          "price": 24.99,
+          "quantity": 1
         }
-    ],
-    "users": [
+      ],
+      "dateOrdered": "2023-06-13T07:27:15.630Z",
+      "id": 2
+    },
+    {
+      "customer": {
+        "firstname": "James",
+        "lastname": "Fisher",
+        "email": "jamiefisher1000@hotmail.com"
+      },
+      "products": [
         {
-            "username": "customer",
-            "password": "customer",
-            "role": "customer"
-        },
-        {
-            "username": "admin",
-            "password": "admin",
-            "role": "admin"
+          "id": 1,
+          "sku": "MT-BL-L-VN",
+          "name": "Men's Blue V-Neck Shirt",
+          "description": "A comfortable and stylish blue V-neck t-shirt for men.",
+          "price": "28.99",
+          "quantity": 25
         }
-    ]
+      ],
+      "dateOrdered": "2023-06-13T07:29:47.891Z",
+      "id": 3
+    }
+  ]
 }
