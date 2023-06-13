@@ -1,0 +1,9 @@
+.order-container {
+    background-color: #ffc145;
+    display: flex;
+    width: 50vw;
+    margin-bottom: 10px;
+    justify-content: space-between;
+    padding: 10px;
+    border-radius: 10px;
+}

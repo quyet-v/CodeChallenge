@@ -9,6 +9,7 @@ import { HomeComponent } from './components/home/home.component';
 import { HeaderComponent } from './components/header/header.component';
 import { ProductsModule } from './modules/products/products.module';
 import { CartModule } from './modules/cart/cart.module';
+import { OrdersModule } from './modules/orders/orders.module';
 
 @NgModule({
   declarations: [
@@ -22,7 +23,8 @@ import { CartModule } from './modules/cart/cart.module';
     AuthModule,
     ProductsModule,
     CartModule,
-    MatIconModule
+    MatIconModule,
+    OrdersModule
   ],
   providers: [],
   bootstrap: [AppComponent]

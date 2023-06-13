@@ -8,8 +8,6 @@ import { Order } from 'src/app/models/Order';
 })
 export class OrdersService {
 
-  orders: Order[] = [];
-
   constructor(private http: HttpClient) { }
 
   /**
