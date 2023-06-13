@@ -13,6 +13,7 @@ export class AuthService {
   secret: string =  "secret";
   users: User[] = [];
   subscription: Subscription;
+  
   constructor(private http: HttpClient) {
     this.subscription = this.getUsers().subscribe(response => {
       this.users = response;
@@ -94,5 +95,4 @@ export class AuthService {
     const user: User = JSON.parse(jsonString);
     return user;
   }
-
 }

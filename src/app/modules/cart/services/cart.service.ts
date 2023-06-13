@@ -7,7 +7,7 @@ import { ItemComponent } from '../components/item/item.component';
 })
 export class CartService {
 
-  cart: Product[] = [];
+  private cart: Product[] = [];
 
   constructor() { }
 
@@ -47,6 +47,22 @@ export class CartService {
    */
   findIndex(product: Product): number {
     return this.cart.findIndex(p => p.sku == product.sku);
+  }
+
+  /**
+   * 
+   * isCartEmpty method
+   * checks to see if cart is empty by doing a length comparison
+   * 
+   * @returns true if empty, false if not 
+   * 
+   */
+  isCartEmpty(): boolean {
+    return this.cart.length == 0;
+  }
+
+  clearCart() {
+    this.cart = [];
   }
 
   /**
