@@ -1,7 +1,7 @@
 <div class="item-container" *ngIf="item != undefined">
     <h1>{{item.name}}</h1>
     <div class="item-quantity-info" >
-        <input type="number">
+        <input class="quantity-input" type="number">
         <h1 *ngIf="item.quantity != undefined">{{item.quantity * item.price}}</h1>
     </div>
 </div>

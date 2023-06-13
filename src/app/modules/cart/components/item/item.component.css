@@ -1,0 +1,15 @@
+.item-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 10px;
+    background: gray;
+    padding: 10px;
+}
+
+.item-quantity-info {
+    display: flex;
+}
+
+.item-quantity-info > * {
+    margin-right: 10px;
+}
