@@ -11,6 +11,7 @@ export class CartService {
   constructor() { }
 
   addProduct(product: Product) {
+    product.quantity = 1;
     this.cart.push(product);
   }
 

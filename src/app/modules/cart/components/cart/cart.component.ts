@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-cart',
@@ -6,5 +7,12 @@ import { Component } from '@angular/core';
   styleUrls: ['./cart.component.css']
 })
 export class CartComponent {
+
+  cartService: CartService;
+
+  constructor(cartService: CartService) {
+    this.cartService = cartService;
+  }
+
 
 }
