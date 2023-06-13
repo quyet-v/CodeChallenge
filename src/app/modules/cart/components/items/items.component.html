@@ -1,1 +1,4 @@
-<p>items works!</p>
+<div class="items-container">
+    <h1 class="cart-title">Cart</h1>
+    <app-item *ngFor="let item of items" [item]="item"></app-item>
+</div>

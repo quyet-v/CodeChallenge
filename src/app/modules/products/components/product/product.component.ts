@@ -1,5 +1,6 @@
 import { Component, Input } from '@angular/core';
 import { Product } from 'src/app/models/Product';
+import { CartService } from 'src/app/modules/cart/services/cart.service';
 
 @Component({
   selector: 'app-product',
@@ -10,11 +11,13 @@ export class ProductComponent {
 
   @Input() product: Product | undefined;
 
-  constructor() {
+  constructor(private cartService: CartService) {
 
   }
 
   handleAdd() {
-    
+    if(this.product != undefined) {
+      this.cartService.addProduct(this.product);
+    }
   }
 }
