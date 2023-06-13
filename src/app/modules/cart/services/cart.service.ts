@@ -29,4 +29,18 @@ export class CartService {
       this.cart.splice(index,1);
     }
   }
+
+  calculateTotal() {
+    let total = 0;
+
+    for(let i = 0; i < this.cart.length; i++) {
+      const item: Product = this.cart[i];
+      if(item.quantity) {
+        total += item.price * item.quantity;
+      }
+    }
+
+    return total;
+
+  }
 }

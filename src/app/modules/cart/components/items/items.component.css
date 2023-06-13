@@ -1,7 +1,19 @@
 .items-container {
     height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-container {
+    flex: 0.8;
+    overflow-y: scroll;
 }
 
 .cart-title {
     border-bottom: 5px solid black;
+    flex: 0.05;
+}
+
+.total-title {
+    flex: 0.05;
 }

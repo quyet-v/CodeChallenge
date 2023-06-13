@@ -1,7 +1,14 @@
 <div class="item-container" *ngIf="item != undefined">
-    <h1>{{item.name}}</h1>
+    <h2>{{item.name}}</h2>
     <div class="item-quantity-info" >
-        <input class="quantity-input" type="number">
-        <h1 *ngIf="item.quantity != undefined">{{item.quantity * item.price}}</h1>
+        <input 
+            min="1" 
+            value="1" 
+            class="quantity-input" 
+            type="number" 
+            (change)="handleQuantityChange($event)"
+            (keydown)="handleType($event)"
+            >
+        <h2 *ngIf="item.quantity != undefined">${{(item.quantity * item.price).toFixed(2)}}</h2>
     </div>
 </div>

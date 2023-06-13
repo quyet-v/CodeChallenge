@@ -9,7 +9,7 @@ import { CartService } from 'src/app/modules/cart/services/cart.service';
 })
 export class ProductComponent {
 
-  @Input() product: Product | undefined;
+  @Input() product?: Product;
 
   constructor(private cartService: CartService) {
 
@@ -20,4 +20,13 @@ export class ProductComponent {
       this.cartService.addProduct(this.product);
     }
   }
+
+  containsItem(): boolean {
+    let contains = false;
+    if(this.product != undefined) {
+      contains = this.cartService.findIndex(this.product) > -1;
+    }
+    return contains;
+  }
+
 }

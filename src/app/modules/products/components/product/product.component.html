@@ -3,5 +3,7 @@
     <p>{{product.description}}</p>
     <p>${{product.price}}</p>
 
-    <button class="button" (click)="handleAdd()">Add</button>
+    <button class="button" *ngIf="!containsItem()" (click)="handleAdd()">Add</button>
+    <button class="disabled-btn button" *ngIf="containsItem()" disabled (click)="handleAdd()"><mat-icon>check_circle</mat-icon></button>
+
 </div>
