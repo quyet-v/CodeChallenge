@@ -9,13 +9,15 @@ import { Product } from 'src/app/models/Product';
 })
 export class ProductsComponent {
 
-  products: Product[] = [];
+  productsService: ProductsService;
 
-  constructor(private productsService: ProductsService) { }
+  constructor(productsService: ProductsService) {
+    this.productsService = productsService;
+  }
 
   ngOnInit() {
     this.productsService.getProducts().subscribe(response => {
-      this.products = response;
+      this.productsService.setProducts(response);
     })
   }
 }

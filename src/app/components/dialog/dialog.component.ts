@@ -47,15 +47,15 @@ export class DialogComponent {
         console.log(res);
       })
 
+      this.productService.replaceProduct(updatedProduct);
+      this.dialogService.setOpenChange(false);
+      alert("Product updated!");
     }
-
-    
-
-
-
-
   }
 
+  handleClose() {
+    this.dialogService.setOpenChange(false);
+  }
 }
 
 
