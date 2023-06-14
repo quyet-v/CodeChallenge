@@ -10,17 +10,17 @@ import { AuthService } from 'src/app/modules/auth/services/auth.service';
 })
 export class ProductsComponent {
 
-  productsService: ProductsService;
-  isAdmin: boolean = false;
+    productsService: ProductsService;
+    isAdmin: boolean = false;
 
-  constructor(productsService: ProductsService, private authService: AuthService) {
-    this.productsService = productsService;
-    this.isAdmin = authService.getRole() == "admin";
-  }
+    constructor(productsService: ProductsService, private authService: AuthService) {
+        this.productsService = productsService;
+        this.isAdmin = authService.getRole() == "admin";
+    }
 
-  ngOnInit() {
-    this.productsService.getProducts().subscribe(response => {
-      this.productsService.setProducts(response);
-    })
-  }
+    ngOnInit() {
+        this.productsService.getProducts().subscribe(response => {
+        this.productsService.setProducts(response);
+        })
+    }
 }
