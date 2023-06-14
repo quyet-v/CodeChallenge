@@ -12,13 +12,11 @@ export class CartService {
   constructor() { }
 
   /**
-   * 
    * addProduct method
    * takes a product from paramter and 
    * adds it into the cart.
    * 
    * @param product - product to add into the cart 
-   * 
    */
   addProduct(product: Product) {
     product.quantity = 1;
@@ -26,7 +24,6 @@ export class CartService {
   }
 
   /**
-   * 
    * getCart method
    * will return the cart.
    * 
@@ -37,7 +34,6 @@ export class CartService {
   }
 
   /**
-   * 
    * findIndex method
    * takes a product from parameter and uses findIndex method
    * to find the index of product.
@@ -50,29 +46,29 @@ export class CartService {
   }
 
   /**
-   * 
    * isCartEmpty method
    * checks to see if cart is empty by doing a length comparison
    * 
    * @returns true if empty, false if not 
-   * 
    */
   isCartEmpty(): boolean {
     return this.cart.length == 0;
   }
 
+  /**
+   * clearCart method
+   * makes cart emptys
+   */
   clearCart() {
     this.cart = [];
   }
 
   /**
-   * 
    * removeProduct method
    * uses findIndex method to get the index of item,
    * removes item from cart if it exists.
    * 
    * @param product - product to remove from cart
-   * 
    */
   removeProduct(product: Product) {
     const index = this.findIndex(product);
@@ -82,7 +78,6 @@ export class CartService {
   }
 
   /**
-   * 
    * calculateTotal method
    * iterates over cart and calculates the total
    * for the users cart.
@@ -101,6 +96,12 @@ export class CartService {
     return total;
   }
 
+  /**
+   * setCart method
+   * uses cart passed through params and sets current cart to it.
+   * 
+   * @param cart cart to set 
+   */
   setCart(cart: Product[]) {
     this.cart = cart;
   }

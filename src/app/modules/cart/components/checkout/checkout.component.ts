@@ -18,6 +18,13 @@ export class CheckoutComponent {
 
   constructor(private orderService: OrdersService, private cartService: CartService, private router: Router) { }
 
+  /**
+   * handleOrder method
+   * creates a new order using items in cart and
+   * info from checkout form
+   * 
+   * @param e event
+   */
   handleOrder(e: Event) {
 
     e.preventDefault();

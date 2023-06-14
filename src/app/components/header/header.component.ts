@@ -16,6 +16,12 @@ export class HeaderComponent {
     this.authService = authService;
   }
 
+  /**
+   * 
+   * handleLogout method
+   * removes token and redirects to login page
+   * 
+   */
   handleLogout() {
     localStorage.removeItem("token");
     this.router.navigate(["login"]);

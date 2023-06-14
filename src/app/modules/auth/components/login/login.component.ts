@@ -14,10 +14,16 @@ export class LoginComponent {
   @ViewChild("passwordInput") passwordInput: ElementRef | undefined;
 
 
-  constructor(private authService: AuthService, private router: Router) {
+  constructor(private authService: AuthService, private router: Router) { }
 
-  }
-
+  /**
+   * 
+   * handleLogin method
+   * uses credntials entered by user and
+   * tries to login
+   * 
+   * @param e event
+   */
   handleLogin(e: Event) {
     e.preventDefault();
 

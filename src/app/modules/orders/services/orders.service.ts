@@ -23,6 +23,8 @@ export class OrdersService {
   }
 
   /**
+   * addOrder method
+   * takes order from params and makes post request to API to cretae order
    * 
    * @param order - order to add to DB
    * @returns Observable<Order>
