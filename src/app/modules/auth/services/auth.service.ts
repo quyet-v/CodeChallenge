@@ -45,7 +45,7 @@ export class AuthService {
   login(attempt: LoginAttempt): boolean {
     const user = this.checkCredentials(attempt,this.users);
 
-    if(user != undefined) {
+    if(user != null) {
       localStorage.setItem("token",this.generateToken(user));
       return true;
     }
@@ -63,13 +63,14 @@ export class AuthService {
    * @param users - array of valid User objects to compare login attempt to 
    * @returns the valid user if success and empty User object if inocrrect
    */
-  checkCredentials(attempt: LoginAttempt, users: User[]): User | undefined {
-    const userExists = users.findIndex(user => user.username == attempt.username && user.password == attempt.password);
-    if(userExists > -1) {
-      return users[userExists];
+  checkCredentials(attempt: LoginAttempt, users: User[]): User | null {
+    const index = users.findIndex(user => user.username == attempt.username && user.password == attempt.password);
+    //IF user exists
+    if(index > -1) {
+      return users[index];
     }
 
-    return undefined;
+    return null;
   }
 
   /**
@@ -80,7 +81,7 @@ export class AuthService {
    * @returns token
    */
   generateToken(user: User): string {
-    if(user == undefined) {
+    if(user == null) {
       return "";
     }
     return CryptoJS.AES.encrypt(JSON.stringify(user),this.secret).toString();
@@ -93,21 +94,30 @@ export class AuthService {
    * @param token - token to decode 
    * @returns JSON string representing the User object
    */
-  decodeToken(token: string): User | undefined {
+  decodeToken(token: string): User | null {
+    //IF token exists
     if(token) {
       const jsonString = CryptoJS.AES.decrypt(token,this.secret).toString(CryptoJS.enc.Utf8)
       const user: User = JSON.parse(jsonString);
       return user;
     }
 
-    return undefined;
+    return null;
   }
 
+  /**
+   * 
+   * getRole method
+   * decodes the token and gets the role
+   * 
+   * @returns role if token is valid, otherwise null 
+   * 
+   */
   getRole(): string | null {
     const token = localStorage.getItem("token");
-
+    //IF token exists
     if(token) {
-      const user: User | undefined = this.decodeToken(token);
+      const user: User | null = this.decodeToken(token);
       if(user) {
         return user.role;
       }
@@ -116,8 +126,17 @@ export class AuthService {
     return null;
   }
 
+  /**
+   * 
+   * isAdmin method
+   * checks to see if user is an admin
+   * 
+   * @returns true if user is admin, fale if not 
+   * 
+   */
   isAdmin(): boolean {
     const token = localStorage.getItem("token");
+    //IF token exists
     if(token) {
       return this.getRole() == "admin";
     }

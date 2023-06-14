@@ -10,6 +10,4 @@ export class OrderComponent {
 
   @Input() order?: Order;
 
-  
-
 }

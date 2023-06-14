@@ -11,8 +11,4 @@ export class ItemsComponent {
   @Input() items: Product[] | undefined;
   @Input() total: number = 0;
 
-  ngOnInit() {
-    console.log(this.items);
-  }
-
 }

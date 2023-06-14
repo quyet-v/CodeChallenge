@@ -22,15 +22,28 @@ export class DialogComponent {
   constructor(private dialogService: DialogService, private productService: ProductsService) { }
 
   ngOnInit() {
+    //Subscribe to openState changes 
     this.dialogService.openChange.subscribe(state => {
       this.openState = state;
     })
 
+    /**
+     * Subscribe to product changes so that when admins
+     * click edit it will use the new product in HTML template
+     */
     this.dialogService.productChange.subscribe(newProduct => {
       this.product = newProduct;
     })
   }
 
+  /**
+   * 
+   * handleSave method
+   * uses the current product and updates 
+   * information for the product
+   * 
+   * @param e input event
+   */
   handleSave(e: Event) {
     e.preventDefault();
 
@@ -43,16 +56,27 @@ export class DialogComponent {
         price: this.priceInput?.nativeElement.value,
       }
 
+      //Uses service method and updates product in DB.
       this.productService.updateProduct(updatedProduct).subscribe(res => {
         console.log(res);
       })
 
+      /**
+       * Replace the original product with the updated product
+       * to rerender
+       */
       this.productService.replaceProduct(updatedProduct);
       this.dialogService.setOpenChange(false);
       alert("Product updated!");
     }
   }
 
+  /**
+   * 
+   * handleCose method
+   * closes the dialog for editting information
+   * 
+   */
   handleClose() {
     this.dialogService.setOpenChange(false);
   }
