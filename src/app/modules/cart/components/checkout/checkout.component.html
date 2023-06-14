@@ -1,9 +1,9 @@
 <div class="checkout-container">
     <h1 class="enter-details-title">Enter details</h1>
     <form class="checkout-form" (submit)="handleOrder($event)">
-        <input #firstname required type="text" class="input" placeholder="Firstname...">
-        <input #lastname required type="text" class="input" placeholder="Lastname...">
-        <input #email required type="text" class="input" placeholder="Email...">
+        <input  name="firstname" [(ngModel)]="firstname" required type="text" class="input" placeholder="Firstname...">
+        <input name="lastname" [(ngModel)]="lastname" required type="text" class="input" placeholder="Lastname...">
+        <input name="email" [(ngModel)]="email" required type="text" class="input" placeholder="Email...">
         <button type="submit" class="input">Place order</button>
     </form>
 </div>

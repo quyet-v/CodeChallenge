@@ -1,3 +1,6 @@
 <div class="products-container">
-    <app-product *ngFor="let product of productsService.products" [product]="product"></app-product>
+    <h1 class="center-text">Products</h1>
+    <div [class.customer-view]="!isAdmin" [class.admin-view]="isAdmin">
+        <app-product *ngFor="let product of productsService.products" [product]="product"></app-product>
+    </div>
 </div>

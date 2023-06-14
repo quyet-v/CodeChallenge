@@ -1,6 +1,12 @@
-.products-container {
+.customer-view {
     display: grid;
     margin: 10px;
     grid-template-columns: repeat(auto-fit,minmax(150px,1fr));
     gap: 10px;
+}
+
+.admin-view {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
 }

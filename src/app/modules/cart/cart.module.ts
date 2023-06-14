@@ -4,6 +4,7 @@ import { CartComponent } from './components/cart/cart.component';
 import { ItemsComponent } from './components/items/items.component';
 import { CheckoutComponent } from './components/checkout/checkout.component';
 import { ItemComponent } from './components/item/item.component';
+import { FormsModule } from '@angular/forms';
 
 
 
@@ -15,7 +16,8 @@ import { ItemComponent } from './components/item/item.component';
     ItemComponent
   ],
   imports: [
-    CommonModule
+    CommonModule,
+    FormsModule
   ]
 })
 export class CartModule { }

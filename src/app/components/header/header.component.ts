@@ -1,4 +1,5 @@
 import { Component, Input } from '@angular/core';
+import { Router } from '@angular/router';
 import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
@@ -11,10 +12,14 @@ export class HeaderComponent {
   authService: AuthService;
   @Input() display: boolean = false;
 
-  constructor(authService: AuthService) { 
+  constructor(authService: AuthService, private router: Router) { 
     this.authService = authService;
   }
 
+  handleLogout() {
+    localStorage.removeItem("token");
+    this.router.navigate(["login"]);
+  }
 
 
 }

@@ -1,6 +1,7 @@
 import { Component } from '@angular/core';
 import { ProductsService } from '../../services/products.service';
 import { Product } from 'src/app/models/Product';
+import { AuthService } from 'src/app/modules/auth/services/auth.service';
 
 @Component({
   selector: 'app-products',
@@ -10,9 +11,11 @@ import { Product } from 'src/app/models/Product';
 export class ProductsComponent {
 
   productsService: ProductsService;
+  isAdmin: boolean = false;
 
-  constructor(productsService: ProductsService) {
+  constructor(productsService: ProductsService, private authService: AuthService) {
     this.productsService = productsService;
+    this.isAdmin = authService.getRole() == "admin";
   }
 
   ngOnInit() {
