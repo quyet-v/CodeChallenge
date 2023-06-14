@@ -9,17 +9,15 @@ import { Product } from 'src/app/models/Product';
 })
 export class CartComponent {
 
-  cart: Product[] = []
-  total: number = 0;
+    cart: Product[] = []
+    total: number = 0;
 
-  constructor(private cartService: CartService) {
-    this.cartService = cartService;
-  }
+    constructor(private cartService: CartService) {
+        this.cartService = cartService;
+    }
 
-  ngOnInit() {
-    this.cart = this.cartService.getCart();
-    this.total = this.cartService.calculateTotal();
-  }
-
-
+    ngOnInit() {
+        this.cart = this.cartService.getCart();
+        this.total = this.cartService.calculateTotal();
+    }
 }

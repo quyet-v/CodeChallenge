@@ -30,7 +30,9 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The appli
 
 Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
 
-For this project, I only implemented unit test for the cart service.
+For this project, I only implemented unit test for the cart service. Which is under /src/modules/cart/services/
+
+If tests dont run, make a simple change in the test file and save.
 
 ## Testing authentication service
 

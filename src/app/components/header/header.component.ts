@@ -9,23 +9,19 @@ import { AuthService } from 'src/app/modules/auth/services/auth.service';
 })
 export class HeaderComponent {
 
-  authService: AuthService;
-  @Input() display: boolean = false;
+    authService: AuthService;
+    @Input() display: boolean = false;
 
-  constructor(authService: AuthService, private router: Router) { 
-    this.authService = authService;
-  }
+    constructor(authService: AuthService, private router: Router) { 
+        this.authService = authService;
+    }
 
-  /**
-   * 
-   * handleLogout method
-   * removes token and redirects to login page
-   * 
-   */
-  handleLogout() {
-    localStorage.removeItem("token");
-    this.router.navigate(["login"]);
-  }
-
-
+    /**
+     * handleLogout method
+     * removes token and redirects to login page
+     */
+    handleLogout() {
+        localStorage.removeItem("token");
+        this.router.navigate(["login"]);
+    }
 }

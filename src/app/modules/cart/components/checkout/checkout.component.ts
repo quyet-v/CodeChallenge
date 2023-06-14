@@ -12,50 +12,50 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent {
 
-  firstname: string = "";
-  lastname: string = ""; 
-  email:string = ""; 
+    firstname: string = "";
+    lastname: string = ""; 
+    email:string = ""; 
 
-  constructor(private orderService: OrdersService, private cartService: CartService, private router: Router) { }
+    constructor(private orderService: OrdersService, private cartService: CartService, private router: Router) { }
 
-  /**
-   * handleOrder method
-   * creates a new order using items in cart and
-   * info from checkout form
-   * 
-   * @param e event
-   */
-  handleOrder(e: Event) {
+    /**
+     * handleOrder method
+     * creates a new order using items in cart and
+     * info from checkout form
+     * 
+     * @param e event
+     */
+    handleOrder(e: Event) {
 
-    e.preventDefault();
-    const target = e.target;
-    const form = target as HTMLFormElement;
-    
-    //Already have required field for inputs,
-    //But just another layer of protection
-    if(form.checkValidity() && !this.cartService.isCartEmpty()) {
-      const customer: Customer = {
-        firstname: this.firstname,
-        lastname: this.lastname,
-        email: this.email,
-      }
+        e.preventDefault();
+        const target = e.target;
+        const form = target as HTMLFormElement;
+        
+        //Already have required field for inputs,
+        //But just another layer of protection
+        if(form.checkValidity() && !this.cartService.isCartEmpty()) {
+            const customer: Customer = {
+                firstname: this.firstname,
+                lastname: this.lastname,
+                email: this.email,
+            }
 
-      const newOrder: Order = {
-        customer,
-        products: this.cartService.getCart(),
-        dateOrdered: new Date()
-      }
+            const newOrder: Order = {
+                customer,
+                products: this.cartService.getCart(),
+                dateOrdered: new Date()
+            }
 
-      this.orderService.addOrder(newOrder).subscribe(response => {
-        alert("Order placed!");
-        this.cartService.clearCart();
-        this.router.navigate(["/products"]);
-      });
-    }else {
-      alert("Please add items into your cart or fill out the form!");
+            this.orderService.addOrder(newOrder).subscribe(response => {
+                alert("Order placed!");
+                this.cartService.clearCart();
+                this.router.navigate(["/products"]);
+            });
+        }else {
+            alert("Please add items into your cart or fill out the form!");
+        }
+
     }
-
-  }
 
 
 }

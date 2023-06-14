@@ -8,28 +8,28 @@ import { Order } from 'src/app/models/Order';
 })
 export class OrdersService {
 
-  constructor(private http: HttpClient) { }
+    constructor(private http: HttpClient) { }
 
-  /**
-   * getOrder method
-   * makes a GET request to the mock API
-   * to endpoint http://localhost:3000/orders
-   * 
-   * @returns Observable<Order[]>
-   * 
-   */
-  getOrders(): Observable<Order[]> {
-    return this.http.get<Order[]>("http://localhost:3000/orders");
-  }
+    /**
+     * getOrder method
+     * makes a GET request to the mock API
+     * to endpoint http://localhost:3000/orders
+     * 
+     * @returns Observable<Order[]>
+     * 
+     */
+    getOrders(): Observable<Order[]> {
+        return this.http.get<Order[]>("http://localhost:3000/orders");
+    }
 
-  /**
-   * addOrder method
-   * takes order from params and makes post request to API to cretae order
-   * 
-   * @param order - order to add to DB
-   * @returns Observable<Order>
-   */
-  addOrder(order: Order): Observable<Order> {
-    return this.http.post<Order>("http://localhost:3000/orders",order);
-  }
+    /**
+     * addOrder method
+     * takes order from params and makes post request to API to cretae order
+     * 
+     * @param order - order to add to DB
+     * @returns Observable<Order>
+     */
+    addOrder(order: Order): Observable<Order> {
+        return this.http.post<Order>("http://localhost:3000/orders",order);
+    }
 }

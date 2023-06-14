@@ -11,32 +11,44 @@ import { DialogService } from 'src/app/services/dialog.service';
 })
 export class ProductComponent {
 
-  @Input() product?: Product;
-  authService: AuthService;
+    @Input() product?: Product;
+    authService: AuthService;
 
-  constructor(private cartService: CartService, authService: AuthService, private dialogService: DialogService) {
-    this.authService = authService;
-  }
-
-  handleAdd() {
-    if(this.product != undefined) {
-      this.cartService.addProduct(this.product);
+    constructor(private cartService: CartService, authService: AuthService, private dialogService: DialogService) {
+        this.authService = authService;
     }
-  }
 
-  containsItem(): boolean {
-    let contains = false;
-    if(this.product != undefined) {
-      contains = this.cartService.findIndex(this.product) > -1;
+    /**
+     * handleAdd method
+     * adds a product to cart
+     */
+    handleAdd() {
+        if(this.product != undefined) {
+        this.cartService.addProduct(this.product);
+        }
     }
-    return contains;
-  }
-
-  handleEdit() {
-    this.dialogService.setOpenChange(true);
-    if(this.product) {
-      this.dialogService.setProductChange(this.product);
+    /**
+     * containsItem method
+     * checks to see if item is already added to cart
+     * 
+     * @returns true if cart contains item
+     */
+    containsItem(): boolean {
+        let contains = false;
+        if(this.product != undefined) {
+            contains = this.cartService.findIndex(this.product) > -1;
+        }
+        return contains;
     }
-  }
 
+    /**
+     * handleEdit method
+     * opens edit dialog 
+     */
+    handleEdit() {
+        this.dialogService.setOpenChange(true);
+        if(this.product) {
+            this.dialogService.setProductChange(this.product);
+        }
+    }
 }
