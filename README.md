@@ -3,7 +3,7 @@
 To get this project up and running, please clone the project 
 
 ```
-git clone https://github.com/quyet-v/CodeChallenge.git.
+git clone https://github.com/quyet-v/CodeChallenge.git
 
 ```
 
