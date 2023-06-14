@@ -12,9 +12,9 @@ import { Router } from '@angular/router';
 })
 export class CheckoutComponent {
 
-  @ViewChild("firstname") firstname?: ElementRef;
-  @ViewChild("lastname") lastname?: ElementRef; 
-  @ViewChild("email") email?: ElementRef; 
+  firstname: string = "";
+  lastname: string = ""; 
+  email:string = ""; 
 
   constructor(private orderService: OrdersService, private cartService: CartService, private router: Router) { }
 
@@ -28,9 +28,9 @@ export class CheckoutComponent {
     //But just another layer of protection
     if(form.checkValidity() && !this.cartService.isCartEmpty()) {
       const customer: Customer = {
-        firstname: this.firstname?.nativeElement.value,
-        lastname: this.lastname?.nativeElement.value,
-        email: this.email?.nativeElement.value,
+        firstname: this.firstname,
+        lastname: this.lastname,
+        email: this.email,
       }
 
       const newOrder: Order = {

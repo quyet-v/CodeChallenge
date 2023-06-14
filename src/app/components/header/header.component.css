@@ -2,8 +2,7 @@
     width: 100vw;
     background-color: gray;
     padding: 10px;
-    position: sticky;
-    top: 0;
+    display: flex;
 }
 
 .navigation-choices {

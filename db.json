@@ -5,7 +5,7 @@
       "sku": "MT-BL-L-VN",
       "name": "Men's Blue V-Neck Shirt",
       "description": "A comfortable and stylish blue V-neck t-shirt for men.",
-      "price": "19.99"
+      "price": "99.99"
     },
     {
       "id": 2,
@@ -107,6 +107,52 @@
       ],
       "dateOrdered": "2023-06-13T07:29:47.891Z",
       "id": 3
+    },
+    {
+      "customer": {
+        "firstname": "",
+        "lastname": "",
+        "email": ""
+      },
+      "products": [
+        {
+          "id": 1,
+          "sku": "MT-BL-L-VN",
+          "name": "Men's Blue V-Neck Shirt",
+          "description": "A comfortable and stylish blue V-neck t-shirt for men.",
+          "price": "29.99",
+          "quantity": 1
+        }
+      ],
+      "dateOrdered": "2023-06-14T00:31:09.637Z",
+      "id": 4
+    },
+    {
+      "customer": {
+        "firstname": "sd",
+        "lastname": "sd",
+        "email": "sd"
+      },
+      "products": [
+        {
+          "id": 1,
+          "sku": "MT-BL-L-VN",
+          "name": "Men's Blue V-Neck Shirt",
+          "description": "A comfortable and stylish blue V-neck t-shirt for men.",
+          "price": "29.99",
+          "quantity": 1
+        },
+        {
+          "id": 2,
+          "sku": "JEANS-BK-32",
+          "name": "Blue Denim Jeans",
+          "description": "Classic blue denim jeans for a stylish and casual look.",
+          "price": "49.99",
+          "quantity": 1
+        }
+      ],
+      "dateOrdered": "2023-06-14T00:39:16.857Z",
+      "id": 5
     }
   ]
 }

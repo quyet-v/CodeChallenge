@@ -11,6 +11,7 @@ import { ProductsModule } from './modules/products/products.module';
 import { CartModule } from './modules/cart/cart.module';
 import { OrdersModule } from './modules/orders/orders.module';
 import { DialogComponent } from './components/dialog/dialog.component';
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -29,6 +30,6 @@ import { DialogComponent } from './components/dialog/dialog.component';
     OrdersModule
   ],
   providers: [],
-  bootstrap: [AppComponent]
+  bootstrap: [AppComponent, [FormsModule]]
 })
 export class AppModule { }
