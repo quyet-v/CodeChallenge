@@ -1,21 +1,20 @@
-import { Component } from '@angular/core';
-import { Order } from 'src/app/models/Order';
-import { OrdersService } from '../../services/orders.service';
+import { Component } from "@angular/core";
+import { type Order } from "src/app/models/Order";
+import { type OrdersService } from "../../services/orders.service";
 
 @Component({
-  selector: 'app-orders',
-  templateUrl: './orders.component.html',
-  styleUrls: ['./orders.component.css']
+    selector: "app-orders",
+    templateUrl: "./orders.component.html",
+    styleUrls: ["./orders.component.css"]
 })
 export class OrdersComponent {
+    orders: Order[] = [];
 
-  orders: Order[] = [];
+    constructor (private readonly orderService: OrdersService) { }
 
-  constructor(private orderService: OrdersService) { }
-
-  ngOnInit() {
-    this.orderService.getOrders().subscribe(response => {
-      this.orders = response;
-    })
-  }
+    ngOnInit () {
+        this.orderService.getOrders().subscribe(response => {
+            this.orders = response;
+        });
+    }
 }
