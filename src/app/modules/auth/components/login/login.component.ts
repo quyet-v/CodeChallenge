@@ -1,7 +1,7 @@
 import { Component, type ElementRef, ViewChild } from "@angular/core";
-import { type AuthService } from "../../services/auth.service";
-import { type LoginAttempt } from "src/app/models/LoginAttempt";
-import { type Router } from "@angular/router";
+import { AuthService } from "../../services/auth.service";
+import { LoginAttempt } from "src/app/models/LoginAttempt";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-login",

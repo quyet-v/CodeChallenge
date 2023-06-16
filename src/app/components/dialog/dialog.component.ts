@@ -1,7 +1,7 @@
 import { Component, type ElementRef, ViewChild } from "@angular/core";
-import { type Product } from "src/app/models/Product";
-import { type ProductsService } from "src/app/modules/products/services/products.service";
-import { type DialogService } from "src/app/services/dialog.service";
+import { Product } from "src/app/models/Product";
+import { ProductsService } from "src/app/modules/products/services/products.service";
+import { DialogService } from "src/app/services/dialog.service";
 
 @Component({
     selector: "app-dialog",

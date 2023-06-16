@@ -1,14 +1,15 @@
 import { Component, Input } from "@angular/core";
-import { type Product } from "src/app/models/Product";
-import { type AuthService } from "src/app/modules/auth/services/auth.service";
-import { type CartService } from "src/app/modules/cart/services/cart.service";
-import { type DialogService } from "src/app/services/dialog.service";
+import {  Product } from "src/app/models/Product";
+import {  AuthService } from "src/app/modules/auth/services/auth.service";
+import {  CartService } from "src/app/modules/cart/services/cart.service";
+import {  DialogService } from "src/app/services/dialog.service";
 
 @Component({
     selector: "app-product",
     templateUrl: "./product.component.html",
     styleUrls: ["./product.component.css"]
 })
+
 export class ProductComponent {
   @Input() product?: Product;
   authService: AuthService;

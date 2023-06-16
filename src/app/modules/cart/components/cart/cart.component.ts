@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { type CartService } from "../../services/cart.service";
-import { type Product } from "src/app/models/Product";
+import { CartService } from "../../services/cart.service";
+import { Product } from "src/app/models/Product";
 
 @Component({
     selector: "app-cart",

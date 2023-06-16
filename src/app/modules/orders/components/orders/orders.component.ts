@@ -1,6 +1,6 @@
 import { Component } from "@angular/core";
-import { type Order } from "src/app/models/Order";
-import { type OrdersService } from "../../services/orders.service";
+import { Order } from "src/app/models/Order";
+import { OrdersService } from "../../services/orders.service";
 
 @Component({
     selector: "app-orders",
