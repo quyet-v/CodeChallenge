@@ -7,5 +7,5 @@ import { type Order } from "src/app/models/Order";
     styleUrls: ["./order.component.css"]
 })
 export class OrderComponent {
-  @Input() order?: Order;
+    @Input() order?: Order;
 }

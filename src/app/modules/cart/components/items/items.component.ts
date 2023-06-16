@@ -7,6 +7,6 @@ import { type Product } from "src/app/models/Product";
     styleUrls: ["./items.component.css"]
 })
 export class ItemsComponent {
-  @Input() items: Product[] | undefined;
-  @Input() total = 0;
+    @Input() items: Product[] | undefined;
+    @Input() total = 0;
 }
