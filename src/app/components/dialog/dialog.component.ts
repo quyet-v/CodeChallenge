@@ -12,67 +12,67 @@ export class DialogComponent {
     openState = false;
     product?: Product;
 
-  @ViewChild("sku") skuInput?: ElementRef;
-  @ViewChild("name") nameInput?: ElementRef;
-  @ViewChild("description") descriptionInput?: ElementRef;
-  @ViewChild("price") priceInput?: ElementRef;
+    @ViewChild("sku") skuInput?: ElementRef;
+    @ViewChild("name") nameInput?: ElementRef;
+    @ViewChild("description") descriptionInput?: ElementRef;
+    @ViewChild("price") priceInput?: ElementRef;
 
-  constructor (private readonly dialogService: DialogService, private readonly productService: ProductsService) { }
+    constructor (private readonly dialogService: DialogService, private readonly productService: ProductsService) { }
 
-  ngOnInit () {
-      // Subscribe to openState changes
-      this.dialogService.openChange.subscribe(state => {
-          this.openState = state;
-      });
+    ngOnInit () {
+        // Subscribe to openState changes
+        this.dialogService.openChange.subscribe(state => {
+            this.openState = state;
+        });
 
-      /**
+        /**
          * Subscribe to product changes so that when admins
          * click edit it will use the new product in HTML template
          */
-      this.dialogService.productChange.subscribe(newProduct => {
-          this.product = newProduct;
-      });
-  }
+        this.dialogService.productChange.subscribe(newProduct => {
+            this.product = newProduct;
+        });
+    }
 
-  /**
+    /**
      * handleSave method
      * uses the current product and updates
      * information for the product
      *
      * @param e input event
      */
-  handleSave (e: Event) {
-      e.preventDefault();
+    handleSave (e: Event) {
+        e.preventDefault();
 
-      if (this.product != null) {
-          const updatedProduct: Product = {
-              id: this.product?.id,
-              sku: this.skuInput?.nativeElement.value,
-              name: this.nameInput?.nativeElement.value,
-              description: this.descriptionInput?.nativeElement.value,
-              price: this.priceInput?.nativeElement.value
-          };
+        if (this.product != null) {
+            const updatedProduct: Product = {
+                id: this.product?.id,
+                sku: this.skuInput?.nativeElement.value,
+                name: this.nameInput?.nativeElement.value,
+                description: this.descriptionInput?.nativeElement.value,
+                price: this.priceInput?.nativeElement.value
+            };
 
-          // Uses service method and updates product in DB.
-          this.productService.updateProduct(updatedProduct).subscribe(res => {
-              console.log(res);
-          });
+            // Uses service method and updates product in DB.
+            this.productService.updateProduct(updatedProduct).subscribe(res => {
+                console.log(res);
+            });
 
-          /**
+            /**
              * Replace the original product with the updated product
              * to rerender
              */
-          this.productService.replaceProduct(updatedProduct);
-          this.dialogService.setOpenChange(false);
-          alert("Product updated!");
-      }
-  }
+            this.productService.replaceProduct(updatedProduct);
+            this.dialogService.setOpenChange(false);
+            alert("Product updated!");
+        }
+    }
 
-  /**
+    /**
      * handleCose method
      * closes the dialog for editting information
      */
-  handleClose () {
-      this.dialogService.setOpenChange(false);
-  }
+    handleClose () {
+        this.dialogService.setOpenChange(false);
+    }
 }

@@ -9,18 +9,18 @@ import { type AuthService } from "src/app/modules/auth/services/auth.service";
 })
 export class HeaderComponent {
     authService: AuthService;
-  @Input() display = false;
+    @Input() display = false;
 
-  constructor (authService: AuthService, private readonly router: Router) {
-      this.authService = authService;
-  }
+    constructor (authService: AuthService, private readonly router: Router) {
+        this.authService = authService;
+    }
 
-  /**
+    /**
      * handleLogout method
      * removes token and redirects to login page
      */
-  handleLogout () {
-      localStorage.removeItem("token");
-      this.router.navigate(["login"]);
-  }
+    handleLogout () {
+        localStorage.removeItem("token");
+        this.router.navigate(["login"]);
+    }
 }

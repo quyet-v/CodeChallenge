@@ -12,21 +12,21 @@ export class DialogService {
     constructor () { }
 
     /**
-   * setOpenState method
-   * emits a new openState for subscribers
-   *
-   * @param openState - new openstate
-   */
+     * setOpenState method
+     * emits a new openState for subscribers
+     *
+     * @param openState - new openstate
+     */
     setOpenChange (openState: boolean) {
         this.openChange.next(openState);
     }
 
     /**
-   * setProductChange method
-   * emits a new product for subscribers
-   *
-   * @param openState - new openstate
-   */
+     * setProductChange method
+     * emits a new product for subscribers
+     *
+     * @param openState - new openstate
+     */
     setProductChange (product: Product) {
         this.productChange.next(product);
     }
