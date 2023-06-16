@@ -1,21 +1,21 @@
-import { ComponentFixture, TestBed } from '@angular/core/testing';
+import { type ComponentFixture, TestBed } from "@angular/core/testing";
 
-import { OrderComponent } from './order.component';
+import { OrderComponent } from "./order.component";
 
-describe('OrderComponent', () => {
-  let component: OrderComponent;
-  let fixture: ComponentFixture<OrderComponent>;
+describe("OrderComponent", () => {
+    let component: OrderComponent;
+    let fixture: ComponentFixture<OrderComponent>;
 
-  beforeEach(() => {
-    TestBed.configureTestingModule({
-      declarations: [OrderComponent]
+    beforeEach(() => {
+        TestBed.configureTestingModule({
+            declarations: [OrderComponent]
+        });
+        fixture = TestBed.createComponent(OrderComponent);
+        component = fixture.componentInstance;
+        fixture.detectChanges();
     });
-    fixture = TestBed.createComponent(OrderComponent);
-    component = fixture.componentInstance;
-    fixture.detectChanges();
-  });
 
-  it('should create', () => {
-    expect(component).toBeTruthy();
-  });
+    it("should create", () => {
+        expect(component).toBeTruthy();
+    });
 });
