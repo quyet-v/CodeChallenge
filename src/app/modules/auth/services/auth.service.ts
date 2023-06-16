@@ -1,8 +1,8 @@
-import { type HttpClient } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { type Observable, type Subscription } from "rxjs";
-import { type LoginAttempt } from "src/app/models/LoginAttempt";
-import { type User } from "src/app/models/User";
+import { Observable, type Subscription } from "rxjs";
+import { LoginAttempt } from "src/app/models/LoginAttempt";
+import { User } from "src/app/models/User";
 import * as CryptoJS from "crypto-js";
 
 @Injectable({

@@ -1,7 +1,7 @@
-import { type HttpClient } from "@angular/common/http";
+import { HttpClient } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { type Observable, Subject } from "rxjs";
-import { type Product } from "src/app/models/Product";
+import { Observable, Subject } from "rxjs";
+import { Product } from "src/app/models/Product";
 
 @Injectable({
     providedIn: "root"
@@ -10,7 +10,7 @@ export class ProductsService {
     products: Product[] = [];
     // productsChange: Subject<Product[]> = new Subject<Product[]>();
 
-    constructor (private readonly http: HttpClient) { }
+    constructor (private http: HttpClient) { }
 
     /**
    * getProducts method
@@ -47,7 +47,7 @@ export class ProductsService {
    * findProduct method
    * uses product passed via params and find index
 
-  * @param product - product to find
+   * @param product - product to find
    * @returns index of product
    */
     findProduct (product: Product): number {

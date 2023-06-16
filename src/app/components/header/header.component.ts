@@ -1,6 +1,6 @@
 import { Component, Input } from "@angular/core";
-import { type Router } from "@angular/router";
-import { type AuthService } from "src/app/modules/auth/services/auth.service";
+import { Router } from "@angular/router";
+import { AuthService } from "src/app/modules/auth/services/auth.service";
 
 @Component({
     selector: "app-header",

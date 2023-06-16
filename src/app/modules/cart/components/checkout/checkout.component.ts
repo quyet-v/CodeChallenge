@@ -1,9 +1,9 @@
 import { Component, ElementRef, Input, ViewChild } from "@angular/core";
-import { type CartService } from "../../services/cart.service";
-import { type OrdersService } from "src/app/modules/orders/services/orders.service";
-import { type Order } from "src/app/models/Order";
-import { type Customer } from "src/app/models/Customer";
-import { type Router } from "@angular/router";
+import { CartService } from "../../services/cart.service";
+import { OrdersService } from "src/app/modules/orders/services/orders.service";
+import { Order } from "src/app/models/Order";
+import { Customer } from "src/app/models/Customer";
+import { Router } from "@angular/router";
 
 @Component({
     selector: "app-checkout",
