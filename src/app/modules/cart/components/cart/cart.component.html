@@ -1,4 +1,4 @@
 <div class="cart-container">
-    <app-items [ngStyle]="{'flex': 0.5}" [items]="cart" [total]="total"></app-items>
+    <app-items [ngStyle]="{'flex': 0.5}" [items]="cart" [total]="getTotal()"></app-items>
     <app-checkout [ngStyle]="{'flex': 0.5}"></app-checkout>
 </div>

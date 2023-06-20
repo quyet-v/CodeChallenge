@@ -9,14 +9,24 @@ import { Product } from "src/app/models/Product";
 })
 export class CartComponent {
     cart: Product[] = [];
-    total = 0;
 
-    constructor (private readonly cartService: CartService) {
+    constructor (private cartService: CartService) {
         this.cartService = cartService;
     }
 
     ngOnInit () {
         this.cart = this.cartService.getCart();
-        this.total = this.cartService.calculateTotal();
+    }
+
+    /**
+     * 
+     * getTotal method
+     * gets the total amount for cart by using calculateTotal
+     * from cartService.
+     * 
+     * @returns total amount for cart
+     */
+    getTotal() {
+        return this.cartService.calculateTotal();
     }
 }
